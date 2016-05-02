@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" <!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>派特宠物店</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+  </head>
+  <body style="background-color: #F8F8F8;" >
+    <!-- 顶部 -->
+      <header class="header header_fixed">
+        <nav id="manage_nav" class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_nav" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a  class="navbar-brand" href="index.html">PET</a><span class="navbar-brand" style="font-size:13px; font-family:'微软雅黑'">后台管理系统</span>  </div>
+
+            <div class="collapse navbar-collapse" id="header_nav">
+              <!--搜索框-->
+              <ul class="nav navbar-nav navbar-right navbar-collapse">
+                <li>
+                  <!-- 用户名 -->
+                   <a id="manage_username" href="#">
+                     用户
+                   </a>
+                </li>
+                <li>
+                  <!-- 退出 -->
+                  <a id="manage_signOut" href="#">退出</a>
+                </li>
+              </ul>
+            </div><!--navbar-collapse-->
+          </div> <!--container-fluid--> 
+        </nav>
+      </header>
+
+      <!-- 中部 -->
+      <section id="manage_section" style="font-family:'微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+        <!-- 登录框 -->
+    <div class="modal fade login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">登录</h4>
+          </div>
+          <div class="modal-body">
+            <p id="index_loginFalse">用户名或密码错误</p>
+            <form id="index_loginForm">
+               <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true" id="username-addon"></span>
+                <input type="text" id="username" class="form-control" placeholder="用户名" aria-describedby="username-addon">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-lock" aria-hidden="true" id="password-addon"></span>
+                <input type="password" id="password" class="form-control" placeholder="密码" aria-describedby="password-addon">
+              </div>                         
+            </form>
+          </div><!--madal-body-->
+          <div class="modal-footer">
+            <a href="#" class="btn btn-sm btn-warning" id="index_loginBtn">&nbsp&nbsp&nbsp&nbsp登录&nbsp&nbsp&nbsp&nbsp</a>
+          </div><!--modal-footer-->
+        </div>
+      </div>
+    </div><!--modal-->
+      </section> 
+
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+        localStorage.manage_username = "miyalee";
+        localStorage.manage_password = "123456";
+              $(function(){
+                $(".login_modal").modal("show");
+                $("#index_loginBtn").click(function(){
+                  // alert($("#username").val());
+                  var username = $("#username").val();
+                  var password = $("#password").val();
+                  if((username == localStorage.manage_username) && (password == localStorage.manage_password)){
+                    window.location.href="manage_category.html";
+                  }else{
+                    alert("用户名或密码错误");
+                  }                 
+                });
+              })
+      </script>
+  </body>
+</html>

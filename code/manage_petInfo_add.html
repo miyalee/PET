@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" <!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>派特宠物店</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+  </head>
+  <body style="background-color: #F8F8F8;" >
+    <!-- 顶部 -->
+      <header class="header header_fixed">
+        <nav id="manage_nav" class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_nav" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a  class="navbar-brand" href="index.html">PET</a><span class="navbar-brand" style="font-size:13px; font-family:'微软雅黑'">后台管理系统</span>              
+            </div>
+
+            <div class="collapse navbar-collapse" id="header_nav">
+              <!--搜索框-->
+              <ul class="nav navbar-nav navbar-right navbar-collapse">
+                <li>
+                  <!-- 用户名 -->
+                   <a id="manage_username" href="#">
+                     miyalee
+                   </a>
+                </li>
+                <li>
+                  <!-- 退出 -->
+                  <a id="manage_signOut" href="#">退出</a>
+                </li>
+              </ul>
+            </div><!--navbar-collapse-->
+          </div> <!--container-fluid--> 
+        </nav>
+      </header>
+
+      <!-- 中部 -->
+      <section id="manage_section" style="font-family:'微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+        <div id="manage_content" class="container-fluid">
+          <div id="manage_left" class="col-md-2 col-sm-4 col-xs-6">
+            <div class="btn-group-vertical" role="group">
+              <button type="button" class="btn btn-default">操作宠物分类</button>
+              <button type="button" class="btn btn-default">操作宠物信息</button>
+              <button type="button" class="btn btn-default">操作用户信息</button>
+            </div>
+          </div>
+          <div id="manage_right" class="col-md-10 col-sm-8 col-xs-6">
+            <div id="manage_right_content">
+                <!-- <div id="manage_header_search" class="input-group">
+                <input id="manage_header_search_input" type="text" class="form-control" placeholder="">
+                  <span class="input-group-btn">
+                  <a class="btn btn-default" href="categoty.html">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </a>
+                  </span>
+                </div> -->
+            <h4>增加宠物信息</h4>
+            <div id="uploadPetInfo_content">
+            <form id="uploadPetInfo_form" class="form-horizontal row">
+              <div class="form-group col-md-6">
+                <label for="petname" class="col-sm-3 control-label uploadPetInfo_key">宠物名称:</label>
+                <div class="col-sm-9">
+                  <input type="text" placeholder=" 如：正宗海豹双色布偶猫成猫" name="petname" class="form-control" id="petname">
+                </div>
+              </div><!--form-group-->
+              <div class="form-group col-md-6">
+                <label for="price" class="col-sm-3 control-label uploadPetInfo_key">宠物价格:</label>
+                <div class="col-sm-9">
+                  <input type="number" placeholder="单位：元" name="price" class="form-control" id="price">
+                </div>
+              </div><!--form-group-->
+
+               <div class="form-group col-md-6">
+                <label for="breed" class="col-sm-3 control-label uploadPetInfo_key">宠物品种:</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="breed" id="breed">
+                    <option disabled>猫咪</option>
+                    <option>异国短毛猫</option>
+                    <option>苏格兰短毛猫</option>
+                    <option>美国短毛猫</option>
+                    <option disabled>狗狗</option>
+                    <option>贵宾犬</option>
+                    <option>金毛</option>
+                    <option>日本柴犬</option>
+                    <option disabled>小宠</option>
+                    <option>兔子</option>
+                    <option>仓鼠</option>
+                    <option>龙猫</option>
+                    <option disabled>其他</option>
+                    <option>鱼类</option>
+                    <option>爬虫类</option>
+                    <option>鸟类</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+              <div class="form-group col-md-6">
+                <label for="petSex" class="col-sm-3 control-label uploadPetInfo_key">宠物性别:</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="petSex" id="petSex">
+                    <option>公</option>
+                    <option>母</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+
+              <div class="form-group col-md-6">
+                <label for="petAge" class="col-sm-3 control-label uploadPetInfo_key">宠物年龄:</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="petAge" id="petAge">
+                    <option>幼猫（0岁-1岁）</option>
+                    <option>成猫（1岁以上）</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+              <div class="form-group col-md-6">
+                <label for="petFur" class="col-sm-3 control-label uploadPetInfo_key">宠物毛长:</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="petFur" id="petFur">
+                    <option>长毛</option>
+                    <option>短毛</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+
+              <div class="form-group col-md-6">
+                <label for="studbook" class="col-sm-3 control-label uploadPetInfo_key">血统信息:</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="studbook" id="studbook">
+                    <option>无血统证书</option>
+                    <option>有血统证书</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+              <div class="form-group col-md-6">
+                <label for="immInsRep" class="col-sm-3 control-label uploadPetInfo_key">免疫驱虫:</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="immInsRep" id="immInsRep">
+                    <option>已做完</option>
+                    <option>未做完</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+
+              <div class="form-group col-md-6">
+                <label for="phone" class="col-sm-3 control-label uploadPetInfo_key">联系方式:</label>
+                <div class="col-sm-9">
+                  <input type="text" placeholder="买家通过联系方式联系你" name="phone" class="form-control" id="phone">
+                </div>
+              </div><!--form-group-->
+              <div class="form-group col-md-6">
+                <label for="consultTime" class="col-sm-3 control-label uploadPetInfo_key">咨询时间:</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="consultTime" id="consultTime">
+                    <option>09：00-21：00</option>
+                    <option>周末</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+
+              <div class="form-group col-md-6">
+                <label for="petPortrait" class="col-sm-3 control-label uploadPetInfo_key">宠物头像:</label>
+                <div class="col-sm-9">
+                  <input type="file" name="petPortrait" id="petPortrait">
+                </div>
+              </div><!--form-group-->
+
+              <div class="form-group col-md-6">
+                <label for="petPhotos" class="col-sm-3 control-label uploadPetInfo_key">宠物图片:</label>
+                <div id="photofiles" class="col-sm-5">  
+                  <input type="file" class="petPhotos" name="petPhotos">     
+                </div>
+                <div class="col-sm-2">
+                  <button type="button" id="photoAddBtn" class="glyphicon glyphicon-plus btn btn-default"></button>
+                </div>
+                <div class="col-sm-2"> 
+                  <button type="button" id="photoDelBtn" class="glyphicon glyphicon-minus btn btn-default"></button> 
+                </div>                            
+              </div><!--form-group-->
+
+              <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-7" id="uploadPetInfo_submit">
+                  <!--  data-target=".uploadPetInfo_success" data-toggle="modal" -->
+                  <input class="btn btn-warning" type="submit" value="确&nbsp&nbsp定">
+                </div>
+              </div><!--form-group-->
+            </form>
+          </div><!--uploadPetInfo_content-->
+                                         
+              
+            </div><!--manage_right_content-->
+          </div><!--manage_right-->
+        </div>
+      </section> 
+
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+              $.validator.setDefaults({
+                  submitHandler:function(form){
+                        alert("提交事件!");   
+                        $("#mymodal").modal("show");
+                  }
+              });
+
+              $(function () {
+                $("#photoAddBtn").click(function(){
+                  var $html = "<input type='file' class='petPhotos' name='petPhotos'>";
+                  $($html).appendTo("#photofiles");
+                });
+
+                $("#photoDelBtn").click(function(){
+                  var len=$("#photofiles input").length;
+                  $("#photofiles input")[len-1].remove();
+                });     
+
+                $("#uploadPetInfo_form").validate(
+                  {
+                      /*自定义验证规则*/
+                      rules: {
+                            petname:{
+                              required:true
+                            },
+                            price:{
+                              required: true,
+                              number:true
+                            },
+                            breed:{
+                              required:true
+                            },
+                            petSex:{
+                            required:true
+                            },
+                            petAge:{
+                              required:true
+                            },
+                            petFur:{
+                              required:true
+                            },
+                            studbook:{
+                              required:true
+                            },
+                            immInsRep:{
+                              required:true
+                            },
+                            phone:{
+                              required:true,
+                              minlength:11,
+                              number:true
+                            },
+                            consultTime:{
+                              required:true
+                            },
+                            petPortrait:{
+                             required:true
+                            },
+                            petPhotos:{
+                             required:true
+                            }
+                      },
+                      messages:{
+                        petname:{
+                              required:"不能为空"
+                            },
+                            price:{
+                              required: "不能为空",
+                              number:"不能为空"
+                            },
+                            breed:{
+                              required:"不能为空"
+                            },
+                            petSex:{
+                            required:"不能为空"
+                            },
+                            petAge:{
+                              required:"不能为空"
+                            },
+                            petFur:{
+                              required:"不能为空"
+                            },
+                            studbook:{
+                              required:"不能为空"
+                            },
+                            immInsRep:{
+                              required:"不能为空"
+                            },
+                            phone:{
+                              required:"不能为空",
+                              minlength:"手机号码为11位数字",
+                              number:"不能为空"
+                            },
+                            consultTime:{
+                              required:"不能为空"
+                            },
+                            petPortrait:{
+                             required:"不能为空"
+                            },
+                            petPhotos:{
+                             required:"不能为空"
+                            }
+                      }//messages
+                  }
+                );     
+            });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" <!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>派特宠物店</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+  </head>
+  <body style="background-color: #F8F8F8;" >
+    <!-- 顶部 -->
+      <header class="header header_fixed">
+        <nav id="manage_nav" class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_nav" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a  class="navbar-brand" href="index.html">PET</a><span class="navbar-brand" style="font-size:13px; font-family:'微软雅黑'">后台管理系统</span>              
+            </div>
+
+            <div class="collapse navbar-collapse" id="header_nav">
+              <!--搜索框-->
+              <ul class="nav navbar-nav navbar-right navbar-collapse">
+                <li>
+                  <!-- 用户名 -->
+                   <a id="manage_username" href="#">
+                     miyalee
+                   </a>
+                </li>
+                <li>
+                  <!-- 退出 -->
+                  <a id="manage_signOut" href="#">退出</a>
+                </li>
+              </ul>
+            </div><!--navbar-collapse-->
+          </div> <!--container-fluid--> 
+        </nav>
+      </header>
+
+      <!-- 中部 -->
+      <section id="manage_section" style="font-family:'微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+        <div id="manage_content" class="container-fluid">
+          <div id="manage_left" class="col-md-2 col-sm-4 col-xs-6">
+            <div class="btn-group-vertical" role="group">
+              <button type="button" class="btn btn-default">操作宠物分类</button>
+              <button type="button" class="btn btn-default">操作宠物信息</button>
+              <button type="button" class="btn btn-default">操作用户信息</button>
+            </div>
+          </div>
+          <div id="manage_right" class="col-md-10 col-sm-8 col-xs-6">
+            <div id="manage_right_content">
+                <!-- <div id="manage_header_search" class="input-group">
+                <input id="manage_header_search_input" type="text" class="form-control" placeholder="">
+                  <span class="input-group-btn">
+                  <a class="btn btn-default" href="categoty.html">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </a>
+                  </span>
+                </div> -->
+            <h4>修改宠物分类</h4>
+            <div id="uploadPetInfo_content">
+            <form id="uploadPetInfo_form" class="form-horizontal row">
+              <div class="form-group col-md-12">
+                <label for="categoryID" class="col-sm-3 control-label uploadPetInfo_key">分类ID:</label>
+                <div class="col-sm-3">
+                  <input type="text" name="categoryID" class="form-control" id="categoryID">
+                </div>
+              </div><!--form-group-->
+              <div class="form-group col-md-12">
+                <label for="categoryFirst" class="col-sm-3 control-label uploadPetInfo_key">一级类别:</label>
+                <div class="col-sm-3">
+                  <select class="form-control" name="categoryFirst" id="categoryFirst">
+                    <option>猫咪</option>
+                    <option>狗狗</option>
+                  </select>
+                </div>
+              </div><!--form-group-->
+
+              <div class="form-group col-md-12">
+                <label for="categorySecond" class="col-sm-3 control-label uploadPetInfo_key">二级类别:</label>
+                <div class="col-sm-3">
+                  <input type="text" name="categorySecond" class="form-control" id="categorySecond">
+                </div>
+              </div><!--form-group-->
+              
+
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9" id="uploadPetInfo_submit">
+                  <!--  data-target=".uploadPetInfo_success" data-toggle="modal" -->
+                  <input class="btn btn-warning" type="submit" value="确&nbsp&nbsp定">
+                </div>
+              </div><!--form-group-->
+            </form>
+          </div><!--uploadPetInfo_content-->
+                                         
+              
+            </div><!--manage_right_content-->
+          </div><!--manage_right-->
+        </div>
+      </section> 
+
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+        $(function (){   
+        //先去空格 
+          console.log(localStorage.category_id );
+          $("#categoryID").val(localStorage.category_id);
+          $("#categoryFirst").val(localStorage.category_first);
+          $("#categorySecond").val(localStorage.category_second);
+        });
+      </script>
+  </body>
+</html>

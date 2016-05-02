@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" <!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>派特宠物店</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/headroom.js"></script>
+    <style type="text/css">
+
+    </style>
+  </head>
+  <body style="background-color: #F8F8F8;">
+  <!-- 登录框 -->
+    <div class="modal fade login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">登录</h4>
+          </div>
+          <div class="modal-body">
+            <p id="index_loginFalse">用户名或密码错误</p>
+            <form id="index_loginForm">
+               <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true" id="username-addon"></span>
+                <input type="text" id="username" class="form-control" placeholder="用户名" aria-describedby="username-addon">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-lock" aria-hidden="true" id="password-addon"></span>
+                <input type="password" id="password" class="form-control" placeholder="密码" aria-describedby="password-addon">
+              </div>                         
+            </form>
+          </div><!--madal-body-->
+          <div class="modal-footer">
+            <a href="#" class="btn btn-sm btn-warning" id="index_loginBtn">&nbsp&nbsp&nbsp&nbsp登录&nbsp&nbsp&nbsp&nbsp</a>
+            <a href="signIn.html" class="btn btn-sm btn-default">&nbsp&nbsp&nbsp&nbsp注册&nbsp&nbsp&nbsp&nbsp</a>
+          </div><!--modal-footer-->
+        </div>
+      </div>
+    </div><!--modal-->
+
+    <!-- 加入购物车成功提示框 -->
+    <div class="modal fade category_success" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h5>成功加入购物车</h5>
+          </div><!--madal-body-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">关闭</button>
+            <a href="shoppingCart.html" type="button" class="btn btn-sm btn-warning">去购物车结算</a>
+          </div><!--modal-footer-->
+        </div>
+      </div>
+    </div><!--modal-->
+
+    <!-- 顶部 -->
+      <header class="header header_fixed">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_nav" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a  class="navbar-brand" href="index.html">PET</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="header_nav">
+                <ul id="nav_center" class="nav navbar-nav">
+                  <li><a href="index.html">首页</a></li>
+                  <li><a href="category.html">猫咪</a></li>
+                  <li><a href="category.html">狗狗</a></li>
+                  <li><a href="category.html">小宠</a></li>
+                  <li><a href="category.html">其他</a></li>
+                </ul>
+              <!--搜索框-->
+              <ul id="" class="nav navbar-nav navbar-right navbar-collapse">
+                <li>
+                  <div id="header_search" class="input-group">
+                    <input id="header_search_input" type="text" class="form-control" placeholder="">
+                      <span class="input-group-btn">
+                      <a class="btn btn-default" href="category.html">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </a>
+                      </span>
+                  </div>
+                </li>
+                <li>
+                  <!-- 购物车 -->
+                   <a id="shopping_cart.html" href="shoppingCart.html" class="navbar-link">
+                     <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                   </a>
+                </li>
+                <li>
+                  <!-- 登录 -->
+                  <a id="login" href="#" data-target=".login_modal" data-toggle="modal" >登录</a>
+                  <a class="dropdown-toggle" data-toggle="dropdown" id="user" href="#" aria-haspopup="true" aria-expanded="true">miya</a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                    <li>
+                      <a href="uploadPetInfo.html">我要上传宠物</a>
+                    </li>
+                    <li>
+                      <a href="saleOrder.html">收到的订单</a>
+                    </li>
+                    <li>
+                      <a href="PayOrder.html">确认的订单</a>
+                    </li>
+                    <li>
+                      <a id="index_loginOut" href="#">退出</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--navbar-collapse-->
+          </div> <!--container-fluid--> 
+        </nav>
+      </header>
+
+      <!-- 中部 -->
+      <section style="font-family:'微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+        <!-- 顶部banner -->
+        <div id="banner" class="jumbotron">
+              <img class="img-responsive" src="images/banner.jpg">
+        </div>
+        
+        <div id="catefory_petShow" class="container row">
+          <div id="catefory_Menu" class="col-md-3 col-sm-3 hidden-xs">
+            <h4>猫咪</h4>
+            <ul class="list-unstyled">
+              <li><a href="category.html">英国短毛猫</a></li>
+              <li><a href="category.html">异国短毛猫</a></li>
+              <li><a href="category.html">苏格兰折耳猫</a></li>
+              <li><a href="category.html">美国短毛猫</a></li>
+              <li><a href="category.html">波斯猫</a></li>
+              <li><a href="category.html">暹罗猫</a></li>
+              <li><a href="category.html">孟加拉豹猫</a></li>
+              <li><a href="category.html">喜马拉雅猫</a></li>
+              <li><a href="category.html">金吉拉</a></li>
+              <li><a href="category.html">孟买猫</a></li>
+              <li><a href="category.html">阿比西尼亚猫</a></li>
+              <li><a href="category.html">其他</a></li>
+            </ul>
+            <h4>狗狗</h4>
+            <ul class="list-unstyled">
+              <li><a href="category.html">贵宾犬</a></li>
+              <li><a href="category.html">金毛</a></li>
+              <li><a href="category.html">日本柴犬</a></li>
+              <li><a href="category.html">萨摩</a></li>
+              <li><a href="category.html">比熊</a></li>
+              <li><a href="category.html">雪纳瑞</a></li>
+              <li><a href="category.html">博美</a></li>
+              <li><a href="category.html">哈士奇</a></li>
+              <li><a href="category.html">柯基</a></li>
+              <li><a href="category.html">德国牧羊犬</a></li>
+              <li><a href="category.html">藏獒</a></li>
+              <li><a href="category.html">杜宾犬</a></li>
+              <li><a href="category.html">罗威纳</a></li>
+              <li><a href="category.html">其他</a></li>
+            </ul>
+            <h4>小宠</h4>
+            <ul class="list-unstyled">
+              <li><a href="category.html">兔子</a></li>
+              <li><a href="category.html">仓鼠</a></li>
+              <li><a href="category.html">龙猫</a></li>
+              <li><a href="category.html">天竺鼠（荷兰猪）</a></li>
+            </ul>
+            <h4>其他</h4>
+            <ul class="list-unstyled">
+              <li><a href="category.html">鱼类</a></li>
+              <li><a href="category.html">爬虫类</a></li>
+              <li><a href="category.html">鸟类</a></li>
+              <li><a href="category.html">其他类</a></li>
+            </ul>
+          </div><!--catefory_Menu-->
+          <div id="catefory_pet" class="col-md-9 col-sm-9">
+            <h5 id="catefory_sortBy"><a href="category.html">所有宠物</a> <a href="category.html">价格最低</a></h5>
+            <div id="catefory_petInfo">
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat1.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>正宗灰白布偶猫成猫</h3>
+                      <h5>￥35000</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat4.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>英国短毛猫蓝猫高品相小公猫</h3>
+                      <h5>￥3500</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat5.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>家养CFA纯种赛级加菲虎斑</h3>
+                      <h5>￥4500</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat6.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>云系英国短毛猫银色渐层幼猫</h3>
+                      <h5>￥10000</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat7.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>英短蓝猫立耳蓝猫短毛</h3>
+                      <h5>￥9999</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat8.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>单CFA纯种加菲猫蓝白加菲短毛</h3>
+                      <h5>￥5500</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat9.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>长毛猫布偶高地立耳DD</h3>
+                      <h5>￥5800</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat10.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart" data-toggle="modal" data-target=".category_success">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>美国短毛猫美短加白母宠物</h3>
+                      <h5>￥5800</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat11.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>苏格兰折耳猫黄白折耳</h3>
+                      <h5>￥4800</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat12.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>异国短毛猫加菲猫母猫红虎斑</h3>
+                      <h5>￥7800</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat13.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="shoppingCart.html" class="shoppingCart">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>纯种加菲猫美国CFA异国红虎斑</h3>
+                      <h5>￥50000</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="images/cat14.jpg" alt="cat">
+                      <div class="shade">
+                        <a href="javascript:void(0);" class="shoppingCart">
+                          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        </a>
+                        <h5>加入购物车</h5>
+                      </div><!--shade-->
+                    <div class="caption">
+                      <h5>暹罗猫海豹重点色暹罗幼崽宠物</h3>
+                      <h5>￥1780</h5>
+                    </div>
+                  </div><!--thumbnail-->
+                </div><!--col-->
+            </div><!--catefory_petInfo-->
+
+            <div class="col-md-12" id="catefory_pagination">
+              <ul class="pagination">
+                <li class="disabled"><a href="category.html" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="active"><a href="category.html">1 <span class="sr-only">(current)</span></a></li>
+                <li><a href="category.html">2</a></li>
+                <li><a href="category.html">3</a></li>
+                <li><a href="category.html">4</a></li>
+                <li><a href="category.html">5</a></li>
+                <li>
+                  <a href="category.html" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div><!--catefory_pet-->
+        </div><!--catefory_petShow-->
+        
+
+      <footer>
+        <div class="container">
+          <div id="contact_us" class="col-md-4">
+            <h4>联系我们：</h4>
+            <p>如果您对网站任何意见或建议，欢迎在下方给我们反馈</p>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="意见与建议......">
+              </div>
+              <button type="submit" class="btn btn-default btn-sm">提交反馈</button>
+            </form>
+          </div>
+          <div id="about_us" class="col-md-4">
+            <h4>关于我们：</h4>
+            <div>
+              <ul>
+                <li>
+                  <img src="images/about_us1.png">
+                </li>
+                <li>
+                  <img src="images/about_us2.png">
+                </li>
+                <li>
+                  <img src="images/about_us3.png">
+                </li>
+                <li>
+                  <img src="images/about_us4.png">
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="about_PET" class="col-md-4">
+            <h4>关于PET:</h4>
+            <p>PET OFFICIAL WEBSITE</p>
+            <p>版权所有 盗版必究 All rights reserved</p>
+            <ul>
+              <li>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                中国北京市海淀区西二旗PET工作室
+              </li>
+              <li>
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                +86 18330115249 +86 15694861705
+              </li>
+              <li>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                miyalee2015@outlook.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/public.js"></script>
+      <script type="text/javascript">
+              var myElement = document.querySelector("header");
+              var headroom = new Headroom(myElement, {
+                "tolerance": 5,
+                "offset": 205,
+                "classes": {
+                  "initial": "animated",
+                  "pinned": "slideInDown",
+                  "unpinned": "slideOutUp"
+              }
+              });
+              headroom.init();
+
+              $(function(){
+                $("#catefory_petInfo .thumbnail").hover(function(){
+                    $(this).children("img").css("opacity","0.2");
+                    $(this).children("img").css("filter","alpha(opacity=20)");
+                    $(this).children(".shade").fadeIn("slow");
+                },
+                 function(){
+                    $(this).children("img").css("opacity","1");
+                    $(this).children("img").css("filter","alpha(opacity=100)");
+                    $(this).children(".shade").fadeOut("slow");
+                })
+                $("#catefory_petInfo .thumbnail .caption h5").click(function(){
+                  window.location.href="details.html";
+                });
+              });
+      </script>
+  </body>
+</html>

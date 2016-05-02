@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" <!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>派特宠物店</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/headroom.js"></script>
+  </head>
+  <body style="background-color: #F8F8F8;" >
+    <!-- 登录框 -->
+    <div class="modal fade login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">登录</h4>
+          </div>
+          <div class="modal-body">
+            <p id="index_loginFalse">用户名或密码错误</p>
+            <form id="index_loginForm">
+               <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true" id="username-addon"></span>
+                <input type="text" id="username" class="form-control" placeholder="用户名" aria-describedby="username-addon">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-lock" aria-hidden="true" id="password-addon"></span>
+                <input type="password" id="password" class="form-control" placeholder="密码" aria-describedby="password-addon">
+              </div>                         
+            </form>
+          </div><!--madal-body-->
+          <div class="modal-footer">
+            <a href="#" class="btn btn-sm btn-warning" id="index_loginBtn">&nbsp&nbsp&nbsp&nbsp登录&nbsp&nbsp&nbsp&nbsp</a>
+            <a href="signIn.html" class="btn btn-sm btn-default">&nbsp&nbsp&nbsp&nbsp注册&nbsp&nbsp&nbsp&nbsp</a>
+          </div><!--modal-footer-->
+        </div>
+      </div>
+    </div><!--modal-->
+    <!-- 顶部 -->
+      <header class="header header_fixed">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header_nav" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a  class="navbar-brand" href="index.html">PET</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="header_nav">
+                <ul id="nav_center" class="nav navbar-nav">
+                  <li><a href="index.html">首页</a></li>
+                  <li><a href="category.html">猫咪</a></li>
+                  <li><a href="category.html">狗狗</a></li>
+                  <li><a href="category.html">小宠</a></li>
+                  <li><a href="category.html">其他</a></li>
+                </ul>
+              <!--搜索框-->
+              <ul id="" class="nav navbar-nav navbar-right navbar-collapse">
+                <li>
+                  <div id="header_search" class="input-group">
+                    <input id="header_search_input" type="text" class="form-control" placeholder="">
+                      <span class="input-group-btn">
+                      <a class="btn btn-default" href="category.html">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </a>
+                      </span>
+                  </div>
+                </li>
+                <li>
+                  <!-- 购物车 -->
+                   <a id="shopping_cart.html" href="shoppingCart.html" class="navbar-link">
+                     <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                   </a>
+                </li>
+                <li>
+                  <!-- 登录 -->
+                  <a id="login" href="#" data-target=".login_modal" data-toggle="modal" >登录</a>
+                  <a class="dropdown-toggle" data-toggle="dropdown" id="user" href="#" aria-haspopup="true" aria-expanded="true">miya</a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                    <li>
+                      <a href="uploadPetInfo.html">我要上传宠物</a>
+                    </li>
+                    <li>
+                      <a href="saleOrder.html">收到的订单</a>
+                    </li>
+                    <li>
+                      <a href="PayOrder.html">确认的订单</a>
+                    </li>
+                    <li>
+                      <a id="index_loginOut" href="#">退出</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--navbar-collapse-->
+          </div> <!--container-fluid--> 
+        </nav>
+      </header>
+
+      <!-- 中部 -->
+      <section id="PayOrder_section" style="font-family:'微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;">
+        <div  class="container">
+          <h3>确认的订单</h3>
+          <p id="PayOrder_reminder">以下为您已经确认的订单，您可以通过这里显示的订单信息和卖家信息进行核实。</p>
+        </div>
+        <div id="PayOrder_content" class="container">
+          <div class="col-md-12">
+            <div class="row PayOrder_item">
+              <div class="col-md-4">
+                <img src="images/cat4.jpg" class="img-responsive" alt="140x140">
+              </div>
+              <div class="col-md-8">
+                <p class="name_price">
+                  <span class="orderNum">1685421578956456</span>
+                  <span class="name">英国短毛猫蓝猫高品相小公猫</span>
+                  <span class="price">￥3500</span>
+                  <span class="vendor">王女士</span>
+                  <span class="vendorPhone">13212389175</span>
+                </p>
+              </div>
+            </div><!--PayOrder_item-->
+
+            <div class="row PayOrder_item">
+              <div class="col-md-4">
+                <img src="images/cat6.jpg" class="img-responsive" alt="140x140">
+              </div>
+              <div class="col-md-8">
+                <p class="name_price">
+                  <span class="orderNum">168623178956457</span>
+                  <span class="name">云系英国短毛猫银色渐层幼猫</span>
+                  <span class="price">￥10000</span>
+                  <span class="vendor">李女士</span>
+                  <span class="vendorPhone">13212345675</span>
+                </p>
+              </div>
+            </div><!--PayOrder_item-->
+
+            <div class="row PayOrder_item">
+              <div class="col-md-4">
+                <img src="images/cat13.jpg" class="img-responsive" alt="140x140">
+              </div>
+              <div class="col-md-8">
+                <p class="name_price">
+                  <span class="orderNum">3545429565256456</span>
+                  <span class="name">纯种加菲猫美国CFA异国红虎斑</span>
+                  <span class="price">￥50000</span>
+                  <span class="vendor">刘先生</span>
+                  <span class="vendorPhone">16912345675</span>
+                </p>
+              </div>
+            </div><!--PayOrder_item-->
+          </div><!--col-md-7-->
+        </div>
+      </section> 
+
+      <footer>
+        <div class="container">
+          <div id="contact_us" class="col-md-4">
+            <h4>联系我们：</h4>
+            <p>如果您对网站任何意见或建议，欢迎在下方给我们反馈</p>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="意见与建议......">
+              </div>
+              <button type="submit" class="btn btn-default btn-sm">提交反馈</button>
+            </form>
+          </div>
+          <div id="about_us" class="col-md-4">
+            <h4>关于我们：</h4>
+            <div>
+              <ul>
+                <li>
+                  <img src="images/about_us1.png">
+                </li>
+                <li>
+                  <img src="images/about_us2.png">
+                </li>
+                <li>
+                  <img src="images/about_us3.png">
+                </li>
+                <li>
+                  <img src="images/about_us4.png">
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="about_PET" class="col-md-4">
+            <h4>关于PET:</h4>
+            <p>PET OFFICIAL WEBSITE</p>
+            <p>版权所有 盗版必究 All rights reserved</p>
+            <ul>
+              <li>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                中国北京市海淀区西二旗PET工作室
+              </li>
+              <li>
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                +86 18330115249 +86 15694861705
+              </li>
+              <li>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                miyalee2015@outlook.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/public.js"></script>
+      <script type="text/javascript">
+              var myElement = document.querySelector("header");
+              var headroom = new Headroom(myElement, {
+                "tolerance": 5,
+                "offset": 205,
+                "classes": {
+                  "initial": "animated",
+                  "pinned": "slideInDown",
+                  "unpinned": "slideOutUp"
+              }
+              });
+              headroom.init();
+
+              $(function () {
+                // $(".delete").click(function(){
+                //   $(this).parent().parent().remove();
+                // })
+            });
+      </script>
+  </body>
+</html>
