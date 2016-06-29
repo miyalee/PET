@@ -1,3 +1,10 @@
 # miyalee
 ##hello
-http://landlee.space/
+  print 'hello'
+[点击这里](http://landlee.space/)
+
+`
+def class(a):
+  print a
+`
+
