@@ -1,7 +1,1 @@
-# miyalee
-##hello
-
-  
-[点击这里](http://landlee.space/)
-
-
+# 毕设项目 派特宠物店 为宠物买家和卖家提供信息服务的平台
